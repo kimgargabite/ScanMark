@@ -1,73 +1,74 @@
+const sheetURL =
+    "https://docs.google.com/spreadsheets/d/e/2PACX-1vQUY-1uySRTKIGcRER9mLcCtRuboUX2Xu4Qdu_yIY2JZDG9F4cy5KfLOzg7EozHQOne7pOz2VAsK4cP/pub?output=csv";
 
+let quotes = [];
 
-const quotes = [
-    {
-        text: "One page at a time. One lesson at a time.",
-        category: "📚 Study"
-    },
+// Load quotes from Google Sheets
+async function loadQuotes() {
+    try {
+        const response = await fetch(sheetURL);
+        const csvText = await response.text();
 
-    {
-        text: "Keep going. Your effort matters.",
-        category: "✨ Motivation"
-    },
+        quotes = parseCSV(csvText);
 
-    {
-        text: "Progress doesn't have to be perfect.",
-        category: "🌱 Growth"
-    },
+        if (quotes.length > 0) {
+            newQuote();
+        } else {
+            document.getElementById("quote").textContent =
+                "No quotes found.";
+        }
 
-    {
-        text: "Rest is part of the process, too.",
-        category: "☀️ Student Life"
-    },
+    } catch (error) {
+        console.error("Error loading quotes:", error);
 
-    {
-        text: "Small steps today can make tomorrow easier.",
-        category: "📚 Study"
-    },
-
-    {
-        text: "You are closer than you think.",
-        category: "✨ Motivation"
-    },
-
-    {
-        text: "Learn from yesterday. Grow today.",
-        category: "🌱 Growth"
-    },
-
-    {
-        text: "It's okay to pause. Just don't give up.",
-        category: "☀️ Student Life"
-    },
-
-    {
-        text: "Focus on what you can do right now.",
-        category: "📚 Study"
-    },
-
-    {
-        text: "Your hard work is building something.",
-        category: "✨ Motivation"
+        document.getElementById("quote").textContent =
+            "Unable to load quotes.";
     }
-];
-
-
-function newQuote() {
-
-    const randomIndex = Math.floor(
-        Math.random() * quotes.length
-    );
-
-    document.getElementById("quote").textContent =
-        quotes[randomIndex].text;
-
-    document.getElementById("category").textContent =
-        quotes[randomIndex].category;
 }
 
 
-/* Automatically generate a quote when the page opens */
+// Convert CSV into quote objects
+function parseCSV(csv) {
+    const lines = csv.trim().split("\n");
 
-newQuote();
+    // Remove header row
+    lines.shift();
 
+    return lines.map(line => {
+        const values = line.match(/(".*?"|[^",]+)(?=\s*,|\s*$)/g);
+
+        if (!values || values.length < 3) {
+            return null;
+        }
+
+        return {
+            id: values[0].replace(/^"|"$/g, "").trim(),
+            text: values[1].replace(/^"|"$/g, "").trim(),
+            category: values[2].replace(/^"|"$/g, "").trim()
+        };
+    }).filter(quote => quote !== null);
+}
+
+
+// Show a random quote
+function newQuote() {
+
+    if (quotes.length === 0) {
+        return;
+    }
+
+    const randomIndex =
+        Math.floor(Math.random() * quotes.length);
+
+    const randomQuote = quotes[randomIndex];
+
+    document.getElementById("quote").textContent =
+        randomQuote.text;
+
+    document.getElementById("category").textContent =
+        randomQuote.category;
+}
+
+
+// Load quotes when the page opens
+loadQuotes();
