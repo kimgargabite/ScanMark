@@ -3,73 +3,308 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ScanMark</title>
+    <title>ScanMark | Scan. Read. Get Inspired.</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <main class="scanmark-container">
+    <!-- Decorative background -->
+    <div class="background-shape shape-one"></div>
+    <div class="background-shape shape-two"></div>
+    <div class="background-dot dot-one"></div>
+    <div class="background-dot dot-two"></div>
 
-        <!-- Decorative Sparkles -->
-        <div class="sparkle sparkle-one">✦</div>
-        <div class="sparkle sparkle-two">✧</div>
 
+    <!-- =========================
+         HEADER
+    ========================== -->
 
-        <!-- Logo -->
-        <div class="logo">
-            SCAN<span>MARK</span>
+    <header class="header">
+
+        <div class="brand">
+            <span class="brand-icon">✦</span>
+
+            <span class="brand-name">
+                SCAN<span>MARK</span>
+            </span>
         </div>
 
+        <div class="header-tag">
+            YOUR DIGITAL READING COMPANION
+        </div>
 
-        <!-- Tagline -->
-        <p class="tagline">
-            Scan. Read. Get Inspired.
-        </p>
+    </header>
 
 
-        <!-- Quote Card -->
-        <div class="quote-card">
+    <!-- =========================
+         HERO
+    ========================== -->
 
-            <div class="quote-icon">
-                “
+    <main>
+
+        <section class="hero">
+
+            <div class="hero-text">
+
+                <p class="eyebrow">
+                    ✨ A LITTLE SOMETHING FOR YOUR READING JOURNEY
+                </p>
+
+                <h1>
+                    Scan.
+                    <span>Read.</span>
+                    Get Inspired.
+                </h1>
+
+                <p class="hero-description">
+                    Every scan brings you a little reminder to keep
+                    learning, growing, and moving forward.
+                </p>
+
             </div>
 
-            <p class="label">
-                YOUR SCANMARK QUOTE
-            </p>
 
-            <p id="quote">
-                Keep going. Your effort matters.
-            </p>
+            <!-- =========================
+                 BOOKMARK QUOTE
+            ========================== -->
 
-            <p id="category" class="category">
-                ✨ Motivation
-            </p>
+            <div class="bookmark-area">
 
-        </div>
+                <div class="bookmark-shadow"></div>
+
+                <div class="bookmark-card">
+
+                    <div class="bookmark-top">
+
+                        <div class="bookmark-logo">
+                            SCAN<span>MARK</span>
+                        </div>
+
+                        <div class="bookmark-sparkle">
+                            ✦
+                        </div>
+
+                    </div>
 
 
-        <!-- New Quote Button -->
-        <button type="button" onclick="newQuote()">
-            ✨ Get Another Quote
-        </button>
+                    <div class="bookmark-content">
+
+                        <p class="quote-label">
+                            YOUR SCANMARK QUOTE
+                        </p>
+
+                        <div class="large-quote">
+                            “
+                        </div>
+
+                        <p id="quote">
+                            Keep going. Your effort matters.
+                        </p>
+
+                        <p id="category" class="category">
+                            ✨ Motivation
+                        </p>
+
+                    </div>
 
 
-        <!-- Footer -->
-        <p class="footer-text">
-            A little reminder for your reading journey. 📖
-        </p>
+                    <div class="bookmark-bottom">
+
+                        <span>
+                            SCAN • READ • INSPIRE
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 BUTTON
+            ========================== -->
+
+            <button
+                type="button"
+                class="quote-button"
+                onclick="newQuote()">
+
+                <span class="button-star">✦</span>
+
+                Get Another Quote
+
+                <span class="button-arrow">→</span>
+
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             HOW IT WORKS
+        ========================== -->
+
+        <section class="how-section">
+
+            <div class="section-heading">
+
+                <p class="small-title">
+                    HOW IT WORKS
+                </p>
+
+                <h2>
+                    One scan.
+                    <span>One little reminder.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="steps">
+
+
+                <!-- STEP 1 -->
+
+                <div class="step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <div class="step-icon">
+                        📖
+                    </div>
+
+                    <h3>
+                        Read
+                    </h3>
+
+                    <p>
+                        Keep your ScanMark magnetic bookmark
+                        with your favorite book.
+                    </p>
+
+                </div>
+
+
+                <!-- STEP 2 -->
+
+                <div class="step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <div class="step-icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        Scan
+                    </h3>
+
+                    <p>
+                        Scan the QR code on your bookmark
+                        using your phone.
+                    </p>
+
+                </div>
+
+
+                <!-- STEP 3 -->
+
+                <div class="step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <div class="step-icon">
+                        ✨
+                    </div>
+
+                    <h3>
+                        Discover
+                    </h3>
+
+                    <p>
+                        Receive a random reminder made
+                        to brighten your reading journey.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MESSAGE SECTION
+        ========================== -->
+
+        <section class="message-section">
+
+            <div class="message-card">
+
+                <div class="message-decoration">
+                    ✦
+                </div>
+
+                <p class="message-small">
+                    A REMINDER FOR YOU
+                </p>
+
+                <h2>
+                    Keep turning pages.
+                    <br>
+                    Keep moving forward.
+                </h2>
+
+                <p>
+                    Your next little reminder might be
+                    just one scan away.
+                </p>
+
+            </div>
+
+        </section>
 
     </main>
 
 
-    <!-- JavaScript -->
-    <script src="script.js?v=2"></script>
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="footer-logo">
+            SCAN<span>MARK</span>
+        </div>
+
+        <p>
+            Scan. Read. Get Inspired. ✨
+        </p>
+
+        <small>
+            Your little digital reading companion.
+        </small>
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="script.js?v=3"></script>
 
 </body>
 
