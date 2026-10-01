@@ -1,196 +1,472 @@
 
+/* ================================
+   SCANMARK
+   Main Website Design
+================================ */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     min-height: 100vh;
-    font-family: Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
 
-    background: linear-gradient(
-        135deg,
-        #dff6ff,
-        #bde8f7,
-        #eafaff
-    );
+    background:
+        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.9) 0 4px, transparent 5px),
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.7) 0 3px, transparent 4px),
+        linear-gradient(135deg, #eafaff, #c8edf8, #dff6ff);
+
+    color: #194c68;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    padding: 20px;
+    padding: 30px 20px;
+
+    overflow-x: hidden;
 }
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
 
 .scanmark-container {
+    width: 100%;
+    max-width: 620px;
+
+    min-height: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
 
-    width: 100%;
-    max-width: 500px;
+    padding: 55px 35px;
 
-    text-align: center;
+    border-radius: 35px;
 
-    background: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.42);
 
-    padding: 45px 30px;
+    border: 1px solid rgba(255, 255, 255, 0.75);
 
-    border-radius: 30px;
+    box-shadow:
+        0 25px 70px rgba(45, 125, 160, 0.20),
+        inset 0 1px 0 rgba(255,255,255,0.8);
 
-    box-shadow: 0 15px 40px rgba(50, 100, 130, 0.15);
+    backdrop-filter: blur(14px);
 }
 
-/* LOGO */
+
+/* ================================
+   DECORATIVE SPARKLES
+================================ */
+
+.sparkle {
+    position: absolute;
+
+    color: #ffffff;
+
+    font-size: 30px;
+
+    opacity: 0.75;
+
+    animation: floatSparkle 3s ease-in-out infinite;
+}
+
+.sparkle-one {
+    top: 55px;
+    left: 55px;
+}
+
+.sparkle-two {
+    top: 110px;
+    right: 55px;
+
+    font-size: 22px;
+
+    animation-delay: 1s;
+}
+
+@keyframes floatSparkle {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(10deg);
+    }
+}
+
+
+/* ================================
+   LOGO
+================================ */
 
 .logo {
-    font-size: 38px;
-    font-weight: 800;
-    letter-spacing: 3px;
+    font-size: 42px;
 
-    color: #287fb5;
+    font-weight: 900;
+
+    letter-spacing: 5px;
+
+    color: #1f719c;
+
+    margin-bottom: 8px;
+
+    text-shadow:
+        0 3px 10px rgba(40, 127, 181, 0.15);
 }
 
 .logo span {
-    color: #4aa9d8;
+    color: #287fb5;
 }
+
+
+/* ================================
+   TAGLINE
+================================ */
 
 .tagline {
-    margin-top: 8px;
-
-    color: #5c7180;
-
     font-size: 15px;
-}
-
-/* QUOTE CARD */
-
-.quote-card {
-    margin-top: 35px;
-
-    background: white;
-
-    padding: 35px 25px;
-
-    border-radius: 25px;
-
-    box-shadow: 0 8px 25px rgba(40, 127, 181, 0.12);
-}
-
-.quote-icon {
-    font-size: 55px;
-
-    color: #4aa9d8;
-
-    height: 45px;
-}
-
-.label {
-    margin-top: 15px;
-
-    font-size: 12px;
-
-    font-weight: bold;
 
     letter-spacing: 2px;
 
-    color: #7a8d98;
+    color: #5b8ca3;
+
+    margin-bottom: 38px;
+
+    text-align: center;
 }
 
+
+/* ================================
+   QUOTE CARD
+================================ */
+
+.quote-card {
+    width: 100%;
+
+    min-height: 330px;
+
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 45px 45px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.94),
+            rgba(235,249,255,0.86)
+        );
+
+    border: 1px solid rgba(255,255,255,0.9);
+
+    box-shadow:
+        0 20px 45px rgba(46, 126, 160, 0.16);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.quote-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 7px;
+
+    background: linear-gradient(
+        90deg,
+        #287fb5,
+        #6bc4e8,
+        #287fb5
+    );
+}
+
+.quote-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 25px 55px rgba(46, 126, 160, 0.22);
+}
+
+
+/* ================================
+   QUOTE ICON
+================================ */
+
+.quote-icon {
+    position: absolute;
+
+    top: 20px;
+    left: 28px;
+
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+
+    line-height: 1;
+
+    color: #b9e5f5;
+
+    opacity: 0.9;
+}
+
+
+/* ================================
+   LABEL
+================================ */
+
+.label {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+
+    color: #72a5b9;
+
+    margin-bottom: 22px;
+}
+
+
+/* ================================
+   QUOTE TEXT
+================================ */
+
 #quote {
-    margin-top: 20px;
+    max-width: 470px;
 
-    font-size: 25px;
+    font-family: Georgia, "Times New Roman", serif;
 
-    line-height: 1.5;
+    font-size: 28px;
+
+    line-height: 1.55;
 
     font-weight: 600;
 
-    color: #28566e;
+    color: #245a73;
+
+    margin-bottom: 25px;
+
+    animation: quoteAppear 0.45s ease;
 }
+
+@keyframes quoteAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ================================
+   CATEGORY
+================================ */
 
 .category {
-    margin-top: 20px;
+    display: inline-flex;
 
-    font-size: 14px;
+    align-items: center;
 
-    color: #4aa9d8;
+    justify-content: center;
+
+    padding: 8px 18px;
+
+    border-radius: 30px;
+
+    background: #e0f5fc;
+
+    border: 1px solid #c2e9f5;
+
+    color: #287fb5;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.5px;
 }
 
-/* BUTTON */
+
+/* ================================
+   BUTTON
+================================ */
 
 button {
     margin-top: 30px;
 
     border: none;
 
-    background: #287fb5;
-
-    color: white;
-
-    padding: 15px 28px;
-
-    border-radius: 15px;
-
-    font-size: 15px;
-
-    font-weight: bold;
+    outline: none;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    padding: 15px 28px;
+
+    border-radius: 50px;
+
+    background: linear-gradient(
+        135deg,
+        #287fb5,
+        #3f9dca
+    );
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+
+    box-shadow:
+        0 10px 25px rgba(40,127,181,0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
 button:hover {
-    background: #1d6594;
+    transform: translateY(-3px);
 
-    transform: translateY(-2px);
+    background: linear-gradient(
+        135deg,
+        #1d6594,
+        #287fb5
+    );
+
+    box-shadow:
+        0 14px 30px rgba(40,127,181,0.32);
 }
 
-/* FOOTER */
+button:active {
+    transform: translateY(0);
+
+    box-shadow:
+        0 6px 15px rgba(40,127,181,0.22);
+}
+
+
+/* ================================
+   FOOTER
+================================ */
 
 .footer-text {
-    margin-top: 25px;
+    margin-top: 28px;
 
     font-size: 13px;
 
-    color: #718894;
+    color: #6793a7;
+
+    text-align: center;
+
+    letter-spacing: 0.3px;
 }
 
-/* DECORATION */
 
-.sparkle {
-    position: absolute;
+/* ================================
+   MOBILE
+================================ */
 
-    color: #4aa9d8;
+@media (max-width: 600px) {
 
-    font-size: 25px;
-}
-
-.sparkle-one {
-    top: 25px;
-    left: 25px;
-}
-
-.sparkle-two {
-    bottom: 25px;
-    right: 25px;
-}
-
-/* MOBILE */
-
-@media (max-width: 500px) {
+    body {
+        padding: 15px;
+    }
 
     .scanmark-container {
-        padding: 35px 20px;
+        min-height: 650px;
+
+        padding: 45px 20px;
+
+        border-radius: 28px;
     }
 
     .logo {
-        font-size: 30px;
+        font-size: 32px;
+
+        letter-spacing: 4px;
+    }
+
+    .tagline {
+        font-size: 12px;
+
+        letter-spacing: 1.5px;
+
+        margin-bottom: 28px;
+    }
+
+    .quote-card {
+        min-height: 320px;
+
+        padding: 60px 25px 35px;
+
+        border-radius: 24px;
     }
 
     #quote {
-        font-size: 21px;
+        font-size: 23px;
+
+        line-height: 1.5;
     }
 
-}
+    .quote-icon {
+        font-size: 55px;
 
+        left: 20px;
+    }
+
+    button {
+        width: 90%;
+
+        padding: 14px 20px;
+
+        font-size: 14px;
+    }
+
+    .sparkle-one {
+        left: 25px;
+    }
+
+    .sparkle-two {
+        right: 25px;
+    }
+}
