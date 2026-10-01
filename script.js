@@ -502,7 +502,29 @@ const quotes = [
         text: "You are still learning, and that is perfectly okay.",
         category: "Student Life"
     }
+{ text: "Isang pahina, isang aral, isang hakbang pasulong.", category: "Study" },
+{ text: "Hindi kailangang alam mo agad ang lahat. Ang mahalaga, patuloy kang natututo.", category: "Study" },
+{ text: "Unti-unti man, basta patuloy.", category: "Study" },
+{ text: "Ang bawat aral na natututunan mo ay dagdag sa iyong kaalaman.", category: "Study" },
+{ text: "Mag-aral nang may tiyaga, dahil bawat pagsisikap ay may bunga.", category: "Study" },
 
+{ text: "Kaya mo. Isang hakbang lang muna.", category: "Motivation" },
+{ text: "Huwag sumuko dahil lang mabagal ang iyong progreso.", category: "Motivation" },
+{ text: "May halaga ang bawat pagsisikap mo.", category: "Motivation" },
+{ text: "Hindi mo kailangang maging perpekto para umusad.", category: "Motivation" },
+{ text: "Patuloy lang. Darating din ang araw na masasabi mong sulit ang lahat.", category: "Motivation" },
+
+{ text: "Ang pagkakamali ay hindi kabiguan; bahagi ito ng pagkatuto.", category: "Growth" },
+{ text: "Lumago sa sarili mong bilis.", category: "Growth" },
+{ text: "Bawat pagsubok ay may aral na maaari mong dalhin.", category: "Growth" },
+{ text: "Hindi mo kailangang ikumpara ang iyong paglalakbay sa iba.", category: "Growth" },
+{ text: "May progreso kahit hindi mo ito agad nakikita.", category: "Growth" },
+
+{ text: "Magpahinga ka rin. Hindi ka makina.", category: "Student Life" },
+{ text: "Okay lang mapagod. Magpahinga, pagkatapos ay subukan muli.", category: "Student Life" },
+{ text: "Hindi lamang grades ang sukatan ng iyong halaga.", category: "Student Life" },
+{ text: "Huminga ka muna. Hindi kailangang matapos ang lahat ngayon.", category: "Student Life" },
+{ text: "Okay lang humingi ng tulong kapag kailangan mo ito.", category: "Student Life" }
 ];
 
 
