@@ -1,8 +1,12 @@
-
-/* ================================
+/* ==================================================
    SCANMARK
-   Main Website Design
-================================ */
+   Complete Website Redesign
+================================================== */
+
+
+/* ==================================================
+   RESET
+================================================== */
 
 * {
     margin: 0;
@@ -10,190 +14,343 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
 
+
 body {
     min-height: 100vh;
-    font-family: "Segoe UI", Arial, sans-serif;
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    color: #164d68;
 
     background:
-        radial-gradient(circle at 15% 20%, rgba(255,255,255,0.9) 0 4px, transparent 5px),
-        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.7) 0 3px, transparent 4px),
-        linear-gradient(135deg, #eafaff, #c8edf8, #dff6ff);
-
-    color: #194c68;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    padding: 30px 20px;
+        linear-gradient(
+            145deg,
+            #f7fdff 0%,
+            #e8f8fd 45%,
+            #c9edf8 100%
+        );
 
     overflow-x: hidden;
 }
 
 
-/* ================================
-   MAIN CONTAINER
-================================ */
+/* ==================================================
+   BACKGROUND DECORATIONS
+================================================== */
 
-.scanmark-container {
+.background-shape {
+    position: fixed;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    filter: blur(2px);
+}
+
+
+.shape-one {
+    width: 420px;
+    height: 420px;
+
+    top: -170px;
+    right: -130px;
+
+    background: #c5edf8;
+
+    opacity: 0.65;
+}
+
+
+.shape-two {
+    width: 350px;
+    height: 350px;
+
+    bottom: -180px;
+    left: -140px;
+
+    background: #b5e5f4;
+
+    opacity: 0.55;
+}
+
+
+.background-dot {
+    position: fixed;
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: #79c6e3;
+
+    opacity: 0.5;
+
+    pointer-events: none;
+}
+
+
+.dot-one {
+    top: 25%;
+    left: 7%;
+}
+
+
+.dot-two {
+    top: 70%;
+    right: 8%;
+}
+
+
+/* ==================================================
+   HEADER
+================================================== */
+
+.header {
     width: 100%;
-    max-width: 620px;
 
-    min-height: 700px;
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 28px 35px;
 
     display: flex;
-    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.brand {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.brand-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+
     align-items: center;
     justify-content: center;
 
-    position: relative;
+    border-radius: 10px;
 
-    padding: 55px 35px;
+    background: #287fb5;
 
-    border-radius: 35px;
+    color: white;
 
-    background: rgba(255, 255, 255, 0.42);
-
-    border: 1px solid rgba(255, 255, 255, 0.75);
+    font-size: 17px;
 
     box-shadow:
-        0 25px 70px rgba(45, 125, 160, 0.20),
-        inset 0 1px 0 rgba(255,255,255,0.8);
-
-    backdrop-filter: blur(14px);
+        0 6px 18px rgba(40,127,181,0.2);
 }
 
 
-/* ================================
-   DECORATIVE SPARKLES
-================================ */
-
-.sparkle {
-    position: absolute;
-
-    color: #ffffff;
-
-    font-size: 30px;
-
-    opacity: 0.75;
-
-    animation: floatSparkle 3s ease-in-out infinite;
-}
-
-.sparkle-one {
-    top: 55px;
-    left: 55px;
-}
-
-.sparkle-two {
-    top: 110px;
-    right: 55px;
-
-    font-size: 22px;
-
-    animation-delay: 1s;
-}
-
-@keyframes floatSparkle {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-10px) rotate(10deg);
-    }
-}
-
-
-/* ================================
-   LOGO
-================================ */
-
-.logo {
-    font-size: 42px;
+.brand-name {
+    font-size: 21px;
 
     font-weight: 900;
 
-    letter-spacing: 5px;
+    letter-spacing: 2px;
 
-    color: #1f719c;
-
-    margin-bottom: 8px;
-
-    text-shadow:
-        0 3px 10px rgba(40, 127, 181, 0.15);
+    color: #1b607f;
 }
 
-.logo span {
+
+.brand-name span {
     color: #287fb5;
 }
 
 
-/* ================================
-   TAGLINE
-================================ */
+.header-tag {
+    font-size: 10px;
 
-.tagline {
-    font-size: 15px;
+    font-weight: 700;
 
-    letter-spacing: 2px;
+    letter-spacing: 1.8px;
 
-    color: #5b8ca3;
+    color: #72a4b8;
+}
 
-    margin-bottom: 38px;
+
+/* ==================================================
+   HERO
+================================================== */
+
+.hero {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        80px 35px
+        90px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
 
     text-align: center;
 }
 
 
-/* ================================
-   QUOTE CARD
-================================ */
+.hero-text {
+    max-width: 720px;
+}
 
-.quote-card {
+
+.eyebrow {
+    margin-bottom: 18px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #5796af;
+}
+
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    font-weight: 900;
+
+    color: #174e68;
+}
+
+
+.hero h1 span {
+    color: #287fb5;
+}
+
+
+.hero-description {
+    max-width: 540px;
+
+    margin:
+        25px auto
+        50px;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    color: #628da1;
+}
+
+
+/* ==================================================
+   BOOKMARK AREA
+================================================== */
+
+.bookmark-area {
+    position: relative;
+
     width: 100%;
 
-    min-height: 330px;
+    display: flex;
+
+    justify-content: center;
+
+    margin-bottom: 35px;
+}
+
+
+.bookmark-shadow {
+    position: absolute;
+
+    width: 310px;
+    height: 450px;
+
+    bottom: -15px;
+
+    background: rgba(28, 103, 137, 0.18);
+
+    border-radius: 20px;
+
+    transform:
+        rotate(4deg)
+        translateX(8px);
+
+    filter: blur(18px);
+}
+
+
+/* ==================================================
+   BOOKMARK CARD
+================================================== */
+
+.bookmark-card {
+    width: 330px;
+
+    min-height: 500px;
 
     position: relative;
 
     display: flex;
+
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
-    text-align: center;
+    justify-content: space-between;
 
-    padding: 60px 45px 45px;
-
-    border-radius: 28px;
+    padding: 30px 28px;
 
     background:
         linear-gradient(
-            145deg,
-            rgba(255,255,255,0.94),
-            rgba(235,249,255,0.86)
+            165deg,
+            #ffffff,
+            #e8f8fd
         );
 
     border: 1px solid rgba(255,255,255,0.9);
 
-    box-shadow:
-        0 20px 45px rgba(46, 126, 160, 0.16);
+    border-radius:
+        20px
+        20px
+        45px
+        45px;
 
-    overflow: hidden;
+    box-shadow:
+        0 30px 60px rgba(42,117,147,0.2);
+
+    transform: rotate(-2deg);
 
     transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    overflow: hidden;
 }
 
-.quote-card::before {
+
+.bookmark-card::before {
     content: "";
 
     position: absolute;
@@ -202,271 +359,730 @@ body {
     left: 0;
 
     width: 100%;
-    height: 7px;
 
-    background: linear-gradient(
-        90deg,
-        #287fb5,
-        #6bc4e8,
-        #287fb5
-    );
-}
+    height: 10px;
 
-.quote-card:hover {
-    transform: translateY(-4px);
-
-    box-shadow:
-        0 25px 55px rgba(46, 126, 160, 0.22);
+    background:
+        linear-gradient(
+            90deg,
+            #287fb5,
+            #6ec9e8
+        );
 }
 
 
-/* ================================
-   QUOTE ICON
-================================ */
+.bookmark-card::after {
+    content: "";
 
-.quote-icon {
     position: absolute;
 
-    top: 20px;
-    left: 28px;
+    width: 150px;
+    height: 150px;
 
-    font-family: Georgia, serif;
+    border-radius: 50%;
 
-    font-size: 70px;
+    top: 120px;
+    right: -80px;
 
-    line-height: 1;
+    background: #d6f3fb;
 
-    color: #b9e5f5;
-
-    opacity: 0.9;
+    opacity: 0.7;
 }
 
 
-/* ================================
-   LABEL
-================================ */
+.bookmark-card:hover {
+    transform:
+        rotate(0deg)
+        translateY(-8px);
 
-.label {
-    font-size: 11px;
-
-    font-weight: 800;
-
-    letter-spacing: 2.5px;
-
-    color: #72a5b9;
-
-    margin-bottom: 22px;
+    box-shadow:
+        0 38px 75px rgba(42,117,147,0.25);
 }
 
 
-/* ================================
-   QUOTE TEXT
-================================ */
+/* ==================================================
+   BOOKMARK TOP
+================================================== */
 
-#quote {
-    max-width: 470px;
+.bookmark-top {
+    display: flex;
 
-    font-family: Georgia, "Times New Roman", serif;
+    justify-content: space-between;
 
-    font-size: 28px;
-
-    line-height: 1.55;
-
-    font-weight: 600;
-
-    color: #245a73;
-
-    margin-bottom: 25px;
-
-    animation: quoteAppear 0.45s ease;
+    align-items: center;
 }
 
-@keyframes quoteAppear {
 
-    from {
-        opacity: 0;
-        transform: translateY(8px);
+.bookmark-logo {
+    font-size: 13px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #1e6687;
+}
+
+
+.bookmark-logo span {
+    color: #287fb5;
+}
+
+
+.bookmark-sparkle {
+    font-size: 23px;
+
+    color: #5eb8d8;
+
+    animation:
+        sparkle 2.5s infinite ease-in-out;
+}
+
+
+@keyframes sparkle {
+
+    0%,
+    100% {
+        transform: rotate(0deg) scale(1);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    50% {
+        transform: rotate(12deg) scale(1.15);
     }
 }
 
 
-/* ================================
-   CATEGORY
-================================ */
+/* ==================================================
+   BOOKMARK CONTENT
+================================================== */
 
-.category {
-    display: inline-flex;
+.bookmark-content {
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    flex-direction: column;
 
     align-items: center;
 
     justify-content: center;
 
-    padding: 8px 18px;
+    flex: 1;
+}
+
+
+.quote-label {
+    margin-bottom: 10px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #83adbd;
+}
+
+
+.large-quote {
+    height: 55px;
+
+    font-family: Georgia, serif;
+
+    font-size: 75px;
+
+    line-height: 1;
+
+    color: #b9e5f3;
+}
+
+
+#quote {
+    max-width: 265px;
+
+    margin:
+        8px auto
+        24px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 24px;
+
+    line-height: 1.5;
+
+    font-weight: 600;
+
+    color: #245d76;
+
+    animation:
+        quoteChange 0.4s ease;
+}
+
+
+@keyframes quoteChange {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ==================================================
+   CATEGORY
+================================================== */
+
+.category {
+    padding: 7px 16px;
 
     border-radius: 30px;
 
-    background: #e0f5fc;
+    background: #ddf4fb;
 
-    border: 1px solid #c2e9f5;
+    border: 1px solid #c3eaf5;
 
     color: #287fb5;
 
-    font-size: 13px;
+    font-size: 11px;
 
-    font-weight: 700;
+    font-weight: 800;
 
-    letter-spacing: 0.5px;
+    letter-spacing: 0.7px;
 }
 
 
-/* ================================
-   BUTTON
-================================ */
+/* ==================================================
+   BOOKMARK BOTTOM
+================================================== */
 
-button {
-    margin-top: 30px;
+.bookmark-bottom {
+    text-align: center;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #8db6c5;
+}
+
+
+/* ==================================================
+   QUOTE BUTTON
+================================================== */
+
+.quote-button {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    min-width: 230px;
+
+    padding: 16px 25px;
 
     border: none;
 
-    outline: none;
-
-    cursor: pointer;
-
-    padding: 15px 28px;
-
     border-radius: 50px;
 
-    background: linear-gradient(
-        135deg,
-        #287fb5,
-        #3f9dca
-    );
+    background:
+        linear-gradient(
+            135deg,
+            #287fb5,
+            #399dcc
+        );
 
     color: white;
 
-    font-size: 15px;
+    font-size: 14px;
 
-    font-weight: 700;
+    font-weight: 800;
 
     letter-spacing: 0.3px;
 
+    cursor: pointer;
+
     box-shadow:
-        0 10px 25px rgba(40,127,181,0.25);
+        0 12px 28px rgba(40,127,181,0.28);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
 }
 
-button:hover {
-    transform: translateY(-3px);
 
-    background: linear-gradient(
-        135deg,
-        #1d6594,
-        #287fb5
-    );
+.quote-button:hover {
+    transform: translateY(-4px);
 
     box-shadow:
-        0 14px 30px rgba(40,127,181,0.32);
+        0 18px 35px rgba(40,127,181,0.35);
 }
 
-button:active {
+
+.quote-button:active {
     transform: translateY(0);
-
-    box-shadow:
-        0 6px 15px rgba(40,127,181,0.22);
 }
 
 
-/* ================================
-   FOOTER
-================================ */
+.button-star {
+    font-size: 16px;
+}
 
-.footer-text {
-    margin-top: 28px;
 
-    font-size: 13px;
+.button-arrow {
+    font-size: 20px;
 
-    color: #6793a7;
+    transition:
+        transform 0.25s ease;
+}
+
+
+.quote-button:hover .button-arrow {
+    transform: translateX(5px);
+}
+
+
+/* ==================================================
+   HOW IT WORKS
+================================================== */
+
+.how-section {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding:
+        90px 35px
+        110px;
+}
+
+
+.section-heading {
+    text-align: center;
+
+    margin-bottom: 55px;
+}
+
+
+.small-title {
+    margin-bottom: 12px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #5796af;
+}
+
+
+.section-heading h2 {
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    color: #174e68;
+}
+
+
+.section-heading h2 span {
+    color: #287fb5;
+}
+
+
+/* ==================================================
+   STEPS
+================================================== */
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.step {
+    position: relative;
+
+    padding: 35px 28px;
+
+    background:
+        rgba(255,255,255,0.62);
+
+    border:
+        1px solid
+        rgba(255,255,255,0.85);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 35px rgba(47,118,145,0.08);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.step:hover {
+    transform: translateY(-7px);
+}
+
+
+.step-number {
+    position: absolute;
+
+    top: 20px;
+    right: 22px;
+
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    color: #9cc6d5;
+}
+
+
+.step-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 20px;
+
+    border-radius: 17px;
+
+    background: #e0f5fb;
+
+    font-size: 25px;
+}
+
+
+.step h3 {
+    margin-bottom: 10px;
+
+    font-size: 21px;
+
+    color: #205b75;
+}
+
+
+.step p {
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    color: #7196a6;
+}
+
+
+/* ==================================================
+   MESSAGE SECTION
+================================================== */
+
+.message-section {
+    padding:
+        30px 35px
+        110px;
+}
+
+
+.message-card {
+    max-width: 900px;
+
+    margin: auto;
+
+    position: relative;
 
     text-align: center;
 
-    letter-spacing: 0.3px;
+    padding:
+        70px 30px;
+
+    border-radius: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #287fb5,
+            #62b9d9
+        );
+
+    color: white;
+
+    box-shadow:
+        0 25px 55px rgba(40,127,181,0.25);
+
+    overflow: hidden;
 }
 
 
-/* ================================
-   MOBILE
-================================ */
+.message-card::before {
+    content: "";
 
-@media (max-width: 600px) {
+    position: absolute;
 
-    body {
-        padding: 15px;
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.1);
+
+    top: -120px;
+    left: -80px;
+}
+
+
+.message-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,0.08);
+
+    bottom: -90px;
+    right: -50px;
+}
+
+
+.message-decoration {
+    position: relative;
+
+    margin-bottom: 10px;
+
+    font-size: 25px;
+}
+
+
+.message-small {
+    position: relative;
+
+    margin-bottom: 15px;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    opacity: 0.8;
+}
+
+
+.message-card h2 {
+    position: relative;
+
+    margin-bottom: 18px;
+
+    font-size: clamp(30px, 5vw, 48px);
+
+    line-height: 1.1;
+}
+
+
+.message-card > p:last-child {
+    position: relative;
+
+    font-size: 15px;
+
+    opacity: 0.9;
+}
+
+
+/* ==================================================
+   FOOTER
+================================================== */
+
+footer {
+    padding:
+        45px 20px
+        55px;
+
+    text-align: center;
+
+    background:
+        rgba(255,255,255,0.55);
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.8);
+}
+
+
+.footer-logo {
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #1d6281;
+}
+
+
+.footer-logo span {
+    color: #287fb5;
+}
+
+
+footer p {
+    margin-bottom: 7px;
+
+    font-size: 13px;
+
+    color: #5f91a5;
+}
+
+
+footer small {
+    font-size: 11px;
+
+    color: #8aabb8;
+}
+
+
+/* ==================================================
+   RESPONSIVE DESIGN
+================================================== */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding:
+            22px 20px;
     }
 
-    .scanmark-container {
-        min-height: 650px;
 
-        padding: 45px 20px;
-
-        border-radius: 28px;
+    .header-tag {
+        display: none;
     }
 
-    .logo {
-        font-size: 32px;
 
-        letter-spacing: 4px;
+    .hero {
+        padding:
+            55px 20px
+            75px;
     }
 
-    .tagline {
-        font-size: 12px;
 
-        letter-spacing: 1.5px;
-
-        margin-bottom: 28px;
+    .hero h1 {
+        letter-spacing: -2px;
     }
 
-    .quote-card {
-        min-height: 320px;
 
-        padding: 60px 25px 35px;
-
-        border-radius: 24px;
+    .steps {
+        grid-template-columns:
+            1fr;
     }
+
+
+    .how-section {
+        padding:
+            70px 20px
+            80px;
+    }
+
+
+    .message-section {
+        padding:
+            20px
+            80px;
+    }
+}
+
+
+@media (max-width: 500px) {
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+
+    .hero h1 {
+        font-size: 48px;
+
+        line-height: 1;
+    }
+
+
+    .hero-description {
+        font-size: 15px;
+
+        margin-bottom: 40px;
+    }
+
+
+    .bookmark-card {
+        width: 285px;
+
+        min-height: 450px;
+
+        padding:
+            27px 22px;
+    }
+
 
     #quote {
-        font-size: 23px;
+        font-size: 21px;
 
-        line-height: 1.5;
+        max-width: 230px;
     }
 
-    .quote-icon {
-        font-size: 55px;
 
-        left: 20px;
+    .bookmark-shadow {
+        width: 270px;
+
+        height: 410px;
     }
 
-    button {
-        width: 90%;
 
-        padding: 14px 20px;
-
-        font-size: 14px;
+    .section-heading h2 {
+        font-size: 31px;
     }
 
-    .sparkle-one {
-        left: 25px;
+
+    .message-card {
+        padding:
+            55px 20px;
     }
 
-    .sparkle-two {
-        right: 25px;
+
+    .message-card h2 {
+        font-size: 32px;
     }
 }
